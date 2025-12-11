@@ -38,6 +38,7 @@ Aplikasi web sederhana yang menampilkan daftar restoran dan memungkinkan penggun
 - Node.js
 - Express.js
 - MySQL
+
 **Database:**
 - XAMPP (Apache + MySQL)
 
@@ -46,11 +47,14 @@ Aplikasi web sederhana yang menampilkan daftar restoran dan memungkinkan penggun
 - Buka XAMPP, start Apache dan MySQL
 - Akses phpMyAdmin di `http://localhost/phpmyadmin`
 
--- Buat Database
+**Buat Database**
+```bash
 CREATE DATABASE IF NOT EXISTS restoran_db;
 USE restoran_db;
+```
 
--- Tabel Restoran
+**Tabel Restoran**
+```bash
 CREATE TABLE IF NOT EXISTS restaurants (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
@@ -59,8 +63,10 @@ CREATE TABLE IF NOT EXISTS restaurants (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+```
 
--- Tabel Reviews
+**Tabel Reviews**
+```bash
 CREATE TABLE IF NOT EXISTS reviews (
   id INT AUTO_INCREMENT PRIMARY KEY,
   restaurant_id INT NOT NULL,
@@ -71,14 +77,19 @@ CREATE TABLE IF NOT EXISTS reviews (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (restaurant_id) REFERENCES restaurants(id)
 );
+```
 
--- Data Sampel
+**Data Sampel**
+```bash
 INSERT INTO restaurants (name, address, phone) VALUES
 ('Gondes', 'Kelapa Dua', '089926564812');
+```
 
--- Sample Reviews untuk restoran pertama
+**Sample Reviews untuk restoran pertama**
+```bash
 INSERT INTO reviews (restaurant_id, rating, review, visitor_name) VALUES
 (1, 4, 'Gondes, ambil sepuasnya', 'Ara');
+```
 
 ### 2. Run Backend
 ```bash
@@ -126,6 +137,3 @@ Jika ada error:
 2. Check terminal backend
 3. Pastikan MySQL running
 4. Pastikan port tidak conflict
-
-- Tambah review dengan rating
-- Edit & hapus review
