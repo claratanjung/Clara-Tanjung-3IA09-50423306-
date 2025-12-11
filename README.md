@@ -23,7 +23,7 @@ Aplikasi web sederhana yang menampilkan daftar restoran dan memungkinkan penggun
 - Jumlah total review
 - Sorting by popularity
 
-✅ **UI/UX **
+✅ **UI/UX**
 - Design responsif (mobile-friendly)
 - Gradasi warna 
 - Animasi smooth
@@ -33,6 +33,7 @@ Aplikasi web sederhana yang menampilkan daftar restoran dan memungkinkan penggun
 **Frontend:**
 - React.js
 - CSS3 dengan animations
+
 **Backend:**
 - Node.js
 - Express.js
